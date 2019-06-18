@@ -12,10 +12,10 @@
         <div class="row d-flex align-items-center justify-content-center">
             <div class="about-content col-lg-12">
                 <h1 class="text-white">
-                    Portfolio
+                    Project
                 </h1>
                 <p class="text-white link-nav"><a href="{% url 'portfolio:index' %}">Home </a> <span
-                        class="lnr lnr-arrow-right"></span> <a href="portfolio.html"> Portfolio</a></p>
+                        class="lnr lnr-arrow-right"></span> <a href="portfolio.html"> Project</a></p>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-70 col-lg-8">
                 <div class="title text-center">
-                    <h1 class="mb-10">Our Featured Portfolios</h1>
+                    <h1 class="mb-10">Our Featured Projects</h1>
                     <p>Who are in extremely love with eco friendly system.</p>
                 </div>
             </div>
@@ -46,7 +46,7 @@
 
         <div class="filters-content">
             <div class="row grid">
-                {% for p in portfolios %}
+                {% for p in projects %}
                 <div class="single-portfolio col-sm-4 all vector">
                     <div class="relative">
                         <div class="thumb">
@@ -55,14 +55,13 @@
                         </div>
                         <a href="{{ p.image.url }}" class="img-pop-up">
                             <div class="middle">
-                                <div class="text align-self-center d-flex"><img src="{% static 'img/preview.png' %}"
-                                        alt=""></div>
+                                <h3 style="color: red; font-family: 'Droid Sans Mono Slashed';">{% for member in p.portfolio.all %} {{ member.author }},  {% endfor %}</h3>
                             </div>
                         </a>
                     </div>
                     <div class="p-inner">
-                        <h4>{{ p.author }}</h4>
-                        <div class="cat">{{ p.description }}</div>
+                        <h4>{{ p.title }}</h4>
+                        <div class="cat">{{ p.description|truncatechars:80 }}</div>
                     </div>
                 </div>
                 {% endfor %}

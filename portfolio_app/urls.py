@@ -8,8 +8,9 @@ urlpatterns = [
     path('blogs/', views.blogs, name='blogs'),
     path('blog_detail/', views.blog_detail, name='blog_detail'),
     # path('contact/', views.contact, name='contact'),
-    path('contact/', views.Contact.as_view(), name='contact'),
-    path('portfolio/', views.portfolio, name='portfolio'),
+    path('contact/', views.ContactUs.as_view(), name='contact'),
+    path('portfolio/', views.PortfolioListView.as_view() , name='portfolio'),
+    path('project/', views.ProjectListView.as_view(), name='project'),
     path('services/', views.services, name='services'),
     path('about/', views.about, name='about'),
 ]

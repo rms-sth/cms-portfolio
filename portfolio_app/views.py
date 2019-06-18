@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import *
+from .models import *
 
 # Create your views here.
 def index(request):
@@ -16,7 +17,7 @@ def blog_detail(request):
 # 	return render(request, 'contactme.html')
 
 
-class Contact(View):
+class ContactUs(View):
 
 	def get(self, request, *args, **kwargs):
 		return render(request, 'contactme.html')
@@ -27,10 +28,20 @@ class Contact(View):
 		email = request.POST.get('email')
 		subject = request.POST.get('subject')
 		message = request.POST.get('message')
-		return render(request, 'contactme.html')
+		Contact.objects.create(name=name,email=email,subject=subject,message=message)
+		# return redirect({'success': 'Your messages is submitted'})
+		return render(request, 'contactme.html', {'success': 'Your messages is submitted'})
 
-def portfolio(request):
-	return render(request, 'portfolio.html')
+class PortfolioListView(ListView):
+	model = Portfolio
+	template_name = 'portfolio.html'
+	context_object_name = 'portfolios'
+
+
+class ProjectListView(ListView):
+	model = Project
+	template_name = 'project.html'
+	context_object_name = 'projects'
 
 def services(request):
 	return render(request, 'services.html')
