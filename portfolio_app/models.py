@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.shortcuts import reverse
+from django.utils import timezone
 
 
 class Contact(models.Model):
@@ -12,7 +14,7 @@ class Contact(models.Model):
 		return self.name
 
 	def absolute_url(self):
-		return reverse('contact_detail', kwargs={'slug': self.slug, })
+		return reverse('contact_detail', kwargs={'slug': self.pk, })
 
 	def __unicode__(self):
 		return self.name
@@ -54,3 +56,26 @@ class Blog(models.Model):
 
 	class Meta:
 		ordering = ('-created_at',)
+
+#User portfolio
+class Portfolio(models.Model):
+	author = models.CharField(max_length = 100)
+	description = models.TextField()
+	image = models.ImageField(upload_to ='portfolioImage',blank = True, null = True)
+	published_at = models.DateTimeField(auto_now_add = True)
+
+	def __str__(self):
+		return self.author
+
+#User project
+class Project(models.Model):
+	portfolio = models.ManyToManyField(Portfolio)
+	title = models.CharField(max_length = 150)
+	description = models.TextField()
+	image = models.ImageField(upload_to='ProjectImage', blank=True, null=True)
+	started_at = models.DateTimeField(blank=False, null=False)
+	completed_at = models.DateTimeField(default=timezone.now)
+
+
+	def __str__(self):
+		return '%s' %(self.title)

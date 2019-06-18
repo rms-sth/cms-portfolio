@@ -19,17 +19,18 @@
     <title>{% block title %}  {% endblock %} | Portfolio</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-
-    <!--    CSS ============================================= -->
-    <link rel="stylesheet" href="{%  static 'css/linearicons.css' %}">
-    <link rel="stylesheet" href="{%  static 'css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{%  static 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{%  static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{%  static 'css/jquery-ui.css' %}">
-    <link rel="stylesheet" href="{%  static 'css/nice-select.css' %}">
-    <link rel="stylesheet" href="{%  static 'css/animate.min.css' %}">
-    <link rel="stylesheet" href="{%  static 'css/owl.carousel.css' %}">
-    <link rel="stylesheet" href="{%  static 'css/main.css' %}">
+    <!--
+    CSS
+    ============================================= -->
+    <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 
     <!-- Django CMS CSS renderer -->
@@ -43,14 +44,6 @@
     <br><br><br>
 
 
-    <!-- Django CMS Nav-bar -->
-    <div class="container">
-        <br><br><br>
-        <ul class="nav navbar-nav">
-            {% show_menu 0 100 100 100 %}
-        </ul>
-
-    </div>
 
     {% block content %}
 
