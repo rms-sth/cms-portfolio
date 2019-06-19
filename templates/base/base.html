@@ -1,7 +1,7 @@
-{% load cms_tags menu_tags sekizai_tags static %}
+{% load cms_tags menu_tags sekizai_tags staticfiles %}
 
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="{{ LANGUAGE_CODE }}" class="no-js">
 <head>
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,18 +10,16 @@
     <!-- Author Meta -->
     <meta name="author" content="colorlib">
     <!-- Meta Description -->
-    <meta name="description" content="">
+    <meta name="description" content="{% page_attribute 'meta_description' %}">
     <!-- Meta Keyword -->
     <meta name="keywords" content="">
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>{% block title %}  {% endblock %} | Portfolio</title>
+    <title>{% block title %}{% page_attribute 'page_title' %}  {% endblock %} | Portfolio</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-    <!--
-    CSS
-    ============================================= -->
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
@@ -41,7 +39,26 @@
 
     <!-- Django CMS Tool-bar -->
     {% cms_toolbar %}
-    <br><br><br>
+
+    <!-- start Navigation Bar -->
+    <header id="header">
+        <div class="container main-menu">
+            <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                    <a href="{% url 'portfolio:index' %}"><img src="{% static 'img/logo.png' %}" alt="" title=""/></a>
+                </div>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+
+                         <!-- Django CMS Menu-bar -->
+                        {% show_menu 0 100 100 100 %}
+
+                    </ul>
+                </nav><!-- #nav-menu-container -->
+            </div>
+        </div>
+    </header><!-- #header -->
+    <!-- end Navigation Bar -->
 
     {% block content %}
 
