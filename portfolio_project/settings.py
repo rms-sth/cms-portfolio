@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_snippet',
     'djangocms_style',
+    # 'aldryn_style',
+    # 'aldryn_bootstrap3',
     'djangocms_column',
     'portfolio_app',
     'portfolio_cms_integration',
