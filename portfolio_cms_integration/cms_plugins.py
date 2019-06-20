@@ -2,18 +2,25 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from .models import PortfolioPluginModel, ProjectPluginModel
 from django.utils.translation import ugettext as _
-
+from .models import Portfolio
+# from cms.models import CMSPlugin
 
 @plugin_pool.register_plugin  # register the plugin
 class PortfolioPluginPublisher(CMSPluginBase):
     model = PortfolioPluginModel  # model where plugin data are saved
+    # model = Portfolio(CMSPlugin)
     module = _("Portfolio")
     name = _("Portfolio Plugin")  # name of the plugin in the interface
     render_template = "portfolio_cms_integration/portfolio_plugin.html"
+    cache = False
 
     def render(self, context, instance, placeholder):
-        context.update({'instance': instance})
+        context = super(PortfolioPluginPublisher, self).render(context, instance, placeholder)
         return context
+
+    # def render(self, context, instance, placeholder):
+    #     context.update({'instance': instance})
+    #     return context
 
 
 @plugin_pool.register_plugin  # register the plugin

@@ -14,7 +14,7 @@ class Contact(models.Model):
 		return self.name
 
 	def absolute_url(self):
-		return reverse('contact_detail', kwargs={'slug': self.pk, })
+		return reverse('contact_detail', kwargs={'id': self.pk, })
 
 	def __unicode__(self):
 		return self.name
@@ -27,6 +27,9 @@ class Tag(models.Model):
 
 	def __str__(self):
 		return self.tag_name
+
+	# def get_absolute_url(self):
+	# 	return reverse('polls:detail', kwargs={'pk': self.pk, })
 
 
 class Category(models.Model):
@@ -67,6 +70,9 @@ class Portfolio(models.Model):
 	def __str__(self):
 		return self.author
 
+	def get_absolute_url(self):
+		return reverse('portfolio:portfolio')
+
 #User project
 class Project(models.Model):
 	portfolio = models.ManyToManyField(Portfolio)
@@ -79,3 +85,6 @@ class Project(models.Model):
 
 	def __str__(self):
 		return '%s' %(self.title)
+
+	def get_absolute_url(self):
+		return reverse('portfolio:project')

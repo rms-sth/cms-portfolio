@@ -19,7 +19,7 @@ class PortfolioMenu(CMSAttachMenu):
         for portfolio in Portfolio.objects.all():
             node = NavigationNode(
                 title=portfolio.author,
-                url=reverse('polls:detail', args=(portfolio.pk,)),
+                url=reverse('portfolio:portfolio'),
                 id=portfolio.pk,  # unique id for this node within the menu
             )
             nodes.append(node)
