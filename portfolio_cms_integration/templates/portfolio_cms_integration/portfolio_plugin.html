@@ -33,12 +33,13 @@
                     <div class="relative">
                         <div class="thumb">
                             <div class="overlay overlay-bg"></div>
-                            <img class="image img-fluid" src="{{ p.image.url }}" alt="" style="width:399px; height: 400px;">
+                            <img class="image img-fluid img-responsive" src="{{ p.image.url }}" alt="{{ p.image.url }}" style="width:399px; height:400px;">
                         </div>
                         <a href="{{ p.image.url }}" class="img-pop-up">
                             <div class="middle">
-                                <div class="text align-self-center d-flex"><img src="{% static 'img/preview.png' %}"
-                                        alt=""></div>
+                                <div class="text align-self-center d-flex">
+                                    <img src="{% static 'img/preview.png' %}" alt="">
+                                </div>
                             </div>
                         </a>
                     </div>
