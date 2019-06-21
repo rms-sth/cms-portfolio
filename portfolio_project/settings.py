@@ -56,8 +56,8 @@ INSTALLED_APPS = [
     'djangocms_snippet',
     'djangocms_style',
     'djangocms_transfer',
-    # 'aldryn_style', => Not needed
-    # 'aldryn_bootstrap3',  => Not needed
+    # 'aldryn_style',
+    # 'aldryn_bootstrap3',
     'djangocms_column',
     'djangocms_icon',
     'djangocms_bootstrap4',
