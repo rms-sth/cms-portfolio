@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'djangocms_modules',
     'cms',
     'menus',
     'treebeard',
@@ -54,6 +55,7 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_snippet',
     'djangocms_style',
+    'djangocms_transfer',
     # 'aldryn_style',
     # 'aldryn_bootstrap3',
     'djangocms_column',
@@ -75,6 +77,7 @@ INSTALLED_APPS = [
     'djangocms_bootstrap4.contrib.bootstrap4_utilities',
     'portfolio_app',
     'portfolio_cms_integration',
+
 ]
 
 MIDDLEWARE = [

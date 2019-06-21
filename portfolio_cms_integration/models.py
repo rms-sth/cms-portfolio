@@ -1,6 +1,6 @@
 from django.db import models
 from cms.models import CMSPlugin
-from portfolio_app.models import Portfolio, Project
+from portfolio_app.models import Portfolio, Project, Testimonial, Blog
 
 
 class PortfolioPluginModel(CMSPlugin):
@@ -19,4 +19,12 @@ class PortfolioPluginModel(CMSPlugin):
 
 
 class ProjectPluginModel(CMSPlugin):
-	author = models.ManyToManyField(Project)
+	project = models.ManyToManyField(Project)
+
+
+class TestimonialPluginModel(CMSPlugin):
+	testimonial = models.ManyToManyField(Testimonial)
+
+
+class BlogPluginModel(CMSPlugin):
+	blog = models.ManyToManyField(Blog)

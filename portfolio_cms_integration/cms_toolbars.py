@@ -58,6 +58,22 @@ class PortfolioToolbar(CMSToolbar):
 			url=admin_reverse('portfolio_app_project_add'),  # the URL it should open with
 		)
 
+		# Menus Blog
+		blog = self.toolbar.get_or_create_menu(
+			'portfolio_cms_integration-blog',  # a unique key for this menu
+			'Blog',  # the text that should appear in the menu
+		)
+
+		blog.add_modal_item(
+			name='Blog list',  # name of the new menu item
+			url=admin_reverse('portfolio_app_blog_changelist'),  # the URL it should open with appname_model_name_changelist
+		)
+
+		blog.add_modal_item(
+			name='Add a new Blog',  # name of the new menu item
+			url=admin_reverse('portfolio_app_blog_add'),  # the URL it should open with
+		)
+
 
 # register the toolbar
 toolbar_pool.register(PortfolioToolbar)

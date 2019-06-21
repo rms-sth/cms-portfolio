@@ -6,12 +6,27 @@ from .models import *
 def index(request):
 	return render(request, 'index.html')
 
-def blogs(request):
-	return render(request, 'blogs.html')
+
+class BlogListView(ListView):
+	model = Blog
+	template_name = 'blogs.html'
+	context_object_name = 'blogs'
 
 
-def blog_detail(request):
-	return render(request, 'blog_detail.html')
+class BlogDetailView(DetailView):
+	model = Blog
+	template_name = 'blog_detail.html'
+	context_object_name = 'blog'
+
+	def get_context_data(self, **kwargs):
+		context = super(BlogDetailView, self).get_context_data(**kwargs)
+		obj = self.get_object()
+		obj.blog_view_count += 1
+		obj.save()
+		return context
+
+# def blog_detail(request):
+# 	return render(request, 'blog_detail.html')
 
 # def contact(request):
 # 	return render(request, 'contactme.html')

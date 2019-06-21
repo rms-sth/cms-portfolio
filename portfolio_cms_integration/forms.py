@@ -1,6 +1,6 @@
 from django import forms
 
-from portfolio_app.models import Portfolio, Project
+from portfolio_app.models import Portfolio, Project, Blog
 
 
 class PortfolioWizardForm(forms.ModelForm):
@@ -12,5 +12,11 @@ class PortfolioWizardForm(forms.ModelForm):
 class ProjectoWizardForm(forms.ModelForm):
     class Meta:
         model = Project
+        # fields = ('poll', 'choice_text')
+        exclude = []
+
+class BlogWizardForm(forms.ModelForm):
+    class Meta:
+        model = Blog
         # fields = ('poll', 'choice_text')
         exclude = []

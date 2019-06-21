@@ -1,0 +1,43 @@
+<!-- Start recent-blog Area -->
+{% load static %}
+<section class="recent-blog-area section-gap">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 pb-30 header-text">
+                <h1>Latest posts from our blog</h1>
+                <p>
+                    You may be a skillful, effective employer but if you don’t trust your personnel and the opposite,
+                    then the chances of improving and expanding the business
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            {% for b in blogs %}
+            <div class="single-recent-blog col-lg-4 col-md-4">
+                <div class="thumb">
+                    <img class="f-img img-fluid mx-auto" src="{{ b.feature_image.url }}" alt="{{ b.title.url }}" style="width: 360px; height: 220px;">
+                </div>
+                <div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+                    <div>
+                        <img class="img-fluid" src="{{ b.image.url }}" alt="">
+                        <a href="#"><span>@{{ b.author }}</span></a>
+                    </div>
+                    <div class="meta">
+                        {{ b.created_at|date }}
+                        <span class="lnr lnr-eye"></span> {{ b.blog_view_count }}
+                        <span class="lnr lnr-bubble"></span> 04
+                    </div>
+                </div>
+                <a href="{% url 'portfolio:blog_detail' b.pk %}">
+                    <h4>{{ b.title }}</h4>
+                </a>
+                <p>
+                    {{ b.content|truncatechars:140 }}
+                </p>
+                <a href="{% url 'portfolio:blog_detail' b.pk %}" class="btn btn-outline-primary">View More</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- end recent-blog Area -->

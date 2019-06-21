@@ -1,7 +1,7 @@
 from cms.wizards.wizard_base import Wizard
 from cms.wizards.wizard_pool import wizard_pool
 
-from portfolio_cms_integration.forms import PortfolioWizardForm, ProjectoWizardForm
+from portfolio_cms_integration.forms import PortfolioWizardForm, ProjectoWizardForm, BlogWizardForm
 
 
 class PortfolioWizard(Wizard):
@@ -9,6 +9,10 @@ class PortfolioWizard(Wizard):
 
 
 class ProjectWizard(Wizard):
+    pass
+
+
+class BlogWizard(Wizard):
     pass
 
 portfolio_wizard = PortfolioWizard(
@@ -25,5 +29,13 @@ project_wizard = ProjectWizard(
     description="Create a new Project",
 )
 
+blog_wizard = BlogWizard(
+    title="Create Blog",
+    weight=200,  # determines the ordering of wizards in the Create dialog
+    form=BlogWizardForm,
+    description="Create a new Blog",
+)
+
 wizard_pool.register(portfolio_wizard)
 wizard_pool.register(project_wizard)
+wizard_pool.register(blog_wizard)

@@ -1,0 +1,35 @@
+<!-- Start testimonial Area -->
+{% load static %}
+<section class="testimonial-area section-gap">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-70 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">Client’s Feedback About Me</h1>
+                    <p>It is very easy to start smoking but it is an uphill task to quit it. Ask any chain smoker or
+                        even a person.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="active-testimonial">
+                {% for t in testimonial %}
+                <div class="single-testimonial item d-flex flex-row">
+                    <div class="thumb">
+                        <img class="img-fluid img-thumbnail rounded" src="{{ t.image.url }}" alt="" style="width: 80px; height: 50px;">
+                    </div>
+                    <div class="desc">
+                        <p>
+                           {{ t.testimony }}
+                        </p>
+                        <h4>{{ t.name }}</h4>
+                        <p>{{ t.position }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End testimonial Area -->

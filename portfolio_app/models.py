@@ -49,6 +49,8 @@ class Blog(models.Model):
 	tag = models.ManyToManyField(Tag)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='blogs')
 	feature_image = models.ImageField(upload_to='blog_images/%Y/%m/%d', blank=True)
+	content = models.TextField()
+	author = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='posts')
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
 	status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='unpublished')
@@ -59,6 +61,9 @@ class Blog(models.Model):
 
 	class Meta:
 		ordering = ('-created_at',)
+
+	def get_absolute_url(self):
+		return reverse('portfolio:blogs')
 
 #User portfolio
 class Portfolio(models.Model):
@@ -88,3 +93,13 @@ class Project(models.Model):
 
 	def get_absolute_url(self):
 		return reverse('portfolio:project')
+
+class Testimonial(models.Model):
+	name = models.CharField(max_length=100)
+	image = models.ImageField(upload_to='testimonial', blank=True)
+	position = models.CharField(max_length=150)
+	testimony = models.CharField(max_length=500)
+
+
+	def __str__(self):
+		return self.name
