@@ -22,7 +22,7 @@ project_wizard = ProjectWizard(
     title="Create Project",
     weight=200,  # determines the ordering of wizards in the Create dialog
     form=ProjectoWizardForm,
-    description="Create a new Proejct",
+    description="Create a new Project",
 )
 
 wizard_pool.register(portfolio_wizard)

@@ -1,4 +1,8 @@
 {% load static %}
+
+{#{% for p in port.all %}#}
+{#<h1>{{ p.author }}</h1>#}
+{#{% endfor %}#}
 <!-- Start portfolio-area Area -->
 <section class="portfolio-area section-gap" id="portfolio">
     <div class="container">
@@ -23,7 +27,8 @@
 
         <div class="filters-content">
             <div class="row grid">
-                {% for p in instance.portfolio.all %}
+{#                {% for p in instance.portfolio.all %}#}
+                {% for p in port.all %}
                 <div class="single-portfolio col-sm-4 all vector">
                     <div class="relative">
                         <div class="thumb">
