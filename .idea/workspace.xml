@@ -3,27 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="34638230-82a5-45ec-8bbd-7d2f32b6569c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_app/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_app/cms_app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_app/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_app/migrations/0002_portfolio_project.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_app/migrations/0003_project_image.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_app/templates/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_app/templates/blog_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_app/templates/blogs.html" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_app/templates/blogs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_cms_integration/cms_plugins.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_cms_integration/cms_plugins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_cms_integration/cms_toolbars.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_cms_integration/cms_toolbars.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_cms_integration/cms_wizards.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_cms_integration/cms_wizards.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_cms_integration/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_cms_integration/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_cms_integration/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_cms_integration/migrations/0002_auto_20190621_1233.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_cms_integration/migrations/0003_auto_20190621_1234.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_cms_integration/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_cms_integration/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/portfolio_project/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+            <state relative-caret-position="234">
+              <caret line="59" column="41" lean-forward="true" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -176,11 +156,11 @@
         <option value="$PROJECT_DIR$/portfolio_app/models.py" />
         <option value="$PROJECT_DIR$/portfolio_cms_integration/cms_toolbars.py" />
         <option value="$PROJECT_DIR$/portfolio_app/urls.py" />
-        <option value="$PROJECT_DIR$/portfolio_project/settings.py" />
         <option value="$PROJECT_DIR$/portfolio_app/views.py" />
         <option value="$PROJECT_DIR$/portfolio_cms_integration/templates/portfolio_cms_integration/blog_plugin.html" />
         <option value="$PROJECT_DIR$/portfolio_app/templates/blog_detail.html" />
         <option value="$PROJECT_DIR$/portfolio_app/templates/blogs.html" />
+        <option value="$PROJECT_DIR$/portfolio_project/settings.py" />
       </list>
     </option>
   </component>
@@ -327,12 +307,12 @@
       <workItem from="1561010266651" duration="27147000" />
       <workItem from="1561053914037" duration="672000" />
       <workItem from="1561092001672" duration="18237000" />
-      <workItem from="1561139169618" duration="1479000" />
+      <workItem from="1561139169618" duration="2246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99338000" />
+    <option name="totallyTimeSpent" value="100105000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -710,8 +690,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/portfolio_project/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+        <state relative-caret-position="234">
+          <caret line="59" column="41" lean-forward="true" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
         </state>
       </provider>
     </entry>
