@@ -12,6 +12,13 @@ class BlogListView(ListView):
 	template_name = 'blogs.html'
 	context_object_name = 'blogs'
 
+	def get_context_data(self, **kwargs):
+		context = super(BlogListView, self).get_context_data(**kwargs)
+		context['latest'] = Blog.objects.filter().order_by('-created_at')[:5]
+		context['categories'] = Category.objects.all()
+		context['tags'] = Tag.objects.all()
+		return context
+
 
 class BlogDetailView(DetailView):
 	model = Blog
@@ -20,16 +27,13 @@ class BlogDetailView(DetailView):
 
 	def get_context_data(self, **kwargs):
 		context = super(BlogDetailView, self).get_context_data(**kwargs)
+		context['latest'] = Blog.objects.filter().order_by('-created_at')[:5]
+		context['categories'] = Category.objects.all()
+		context['tags'] = Tag.objects.all()
 		obj = self.get_object()
 		obj.blog_view_count += 1
 		obj.save()
 		return context
-
-# def blog_detail(request):
-# 	return render(request, 'blog_detail.html')
-
-# def contact(request):
-# 	return render(request, 'contactme.html')
 
 
 class ContactUs(View):
