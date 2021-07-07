@@ -2,8 +2,6 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from .models import PortfolioPluginModel, ProjectPluginModel, TestimonialPluginModel, BlogPluginModel
 from django.utils.translation import ugettext as _
-from .models import Portfolio, Project, Testimonial, Blog
-
 
 @plugin_pool.register_plugin  # register the plugin
 class PortfolioPluginPublisher(CMSPluginBase):
@@ -11,10 +9,10 @@ class PortfolioPluginPublisher(CMSPluginBase):
     module = _("Portfolio")
     name = _("Portfolio Plugin")  # name of the plugin in the interface
     render_template = "portfolio_cms_integration/portfolio_plugin.html"
+    cache = False
 
     def render(self, context, instance, placeholder):
-        port = Portfolio.objects.all()
-        context.update({'instance': instance, 'port':port})
+        context.update({'instance': instance})
         return context
 
 
@@ -24,10 +22,10 @@ class ProjectPluginPublisher(CMSPluginBase):
     module = _("Project")
     name = _("Project Plugin")  # name of the plugin in the interface
     render_template = "portfolio_cms_integration/project_plugin.html"
+    cache = False
 
     def render(self, context, instance, placeholder):
-        project = Project.objects.all()
-        context.update({'instance': instance, 'project':project})
+        context.update({'instance': instance})
         return context
 
 
@@ -37,10 +35,11 @@ class TestimonialPluginPublisher(CMSPluginBase):
     module = _("Testimonial")
     name = _("Testimonial Plugin")  # name of the plugin in the interface
     render_template = "portfolio_cms_integration/testimonial_plugin.html"
+    cache = False
+
 
     def render(self, context, instance, placeholder):
-        testimonial = Testimonial.objects.all()
-        context.update({'instance': instance, 'testimonial':testimonial})
+        context.update({'instance': instance,})
         return context
 
 
@@ -50,8 +49,9 @@ class BlogPluginPublisher(CMSPluginBase):
     module = _("Blog")
     name = _("Blog Plugin")  # name of the plugin in the interface
     render_template = "portfolio_cms_integration/blog_plugin.html"
+    cache = False
+
 
     def render(self, context, instance, placeholder):
-        blogs = Blog.objects.all()
-        context.update({'instance': instance, 'blogs':blogs})
+        context.update({'instance': instance})
         return context

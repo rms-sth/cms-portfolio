@@ -13,7 +13,7 @@
         </div>
         <div class="row">
             <div class="active-testimonial">
-                {% for t in testimonial %}
+                {% for t in instance.testimonial.all %}
                 <div class="single-testimonial item d-flex flex-row">
                     <div class="thumb">
                         <img class="rounded" src="{{ t.image.url }}" alt="{{ t.image.url }}" style="width:50px;height:50px;">

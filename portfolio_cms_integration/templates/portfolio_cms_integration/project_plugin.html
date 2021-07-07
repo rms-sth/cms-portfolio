@@ -1,14 +1,11 @@
 {% load static %}
 
-{#{% for p in instance.author.all %}#}
-{#<h1>hello</h1>#}
-{#{% endfor %}#}
 <!-- Start portfolio-area Area -->
 <section class="portfolio-area section-gap" id="portfolio">
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-70 col-lg-8">
-                <div class="title text-center">
+                <div class="title textproject-center">
                     <h1 class="mb-10">Our Featured Projects</h1>
                     <p>Who are in extremely love with eco friendly system.</p>
                 </div>
@@ -27,16 +24,19 @@
 
         <div class="filters-content">
             <div class="row grid">
-                {% for p in project %}
+                {% for p in instance.project.all %}
                 <div class="single-portfolio col-sm-4 all vector">
                     <div class="relative">
                         <div class="thumb">
                             <div class="overlay overlay-bg"></div>
-                            <img class="image img-fluid" src="{{ p.image.url }}" alt="" style="width:399px; height: 400px;">
+                            <img class="image img-fluid" src="{% if p.image %} {{ p.image.url }} {% endif %}" alt="{{ p.title }}"
+                                style="width:399px; height: 400px;">
                         </div>
-                        <a href="{{ p.image.url }}" class="img-pop-up">
+                        <a href="{% if p.image %} {{p.image.url}} {% endif %}" class="img-pop-up">
                             <div class="middle">
-                                <h3 style="color: red; font-family: 'Droid Sans Mono Slashed';">{% for member in p.portfolio.all %} {{ member.author }},  {% endfor %}</h3>
+                                <h3 style="color: red; font-family: 'Droid Sans Mono Slashed';">
+                                    {% for member in p.portfolio.all %} {{ member.author }}, {% endfor %}
+                                </h3>
                             </div>
                         </a>
                     </div>
@@ -46,6 +46,6 @@
                     </div>
                 </div>
                 {% endfor %}
-        </div>
+            </div>
 </section>
 <!-- End portfolio-area Area -->
