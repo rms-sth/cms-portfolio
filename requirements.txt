@@ -32,6 +32,6 @@ html5lib==1.1
 Pillow==9.0.1
 pytz==2021.1
 six==1.16.0
-sqlparse==0.4.2
+sqlparse==0.4.4
 Unidecode==1.1.2
 webencodings==0.5.1
